@@ -12,6 +12,7 @@
             <div class="hand hour-hand"></div>
             <div class="hand min-hand"></div>
             <div class="hand second-hand"></div>
+            <div class="center"></div>
         </div>
     </div>
 
@@ -67,6 +68,17 @@
         
         .second-hand {
             transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+        }
+        
+        .center {
+            width: 15px;
+            height: 15px;
+            background: black;
+            position: absolute;
+            left: 48.5%;
+            top: 49%;
+            z-index: 1;
+            border-radius: 50%;
         }
     </style>
 

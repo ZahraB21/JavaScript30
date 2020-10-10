@@ -61,11 +61,22 @@
             transform-origin: 100%;
             transform: rotate(90deg);
             transition: all 0.05s;
-            transition-timing-function: cubic-bezier(0.16, 2.82, 0, 4.3);
+            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
         }
     </style>
 
-    <script></script>
+    <script>
+        const hand = document.querySelector(".hand");
+
+        function setDate() {
+            const date = new Date();
+            const seconds = date.getSeconds();
+            const secondsDegree = (seconds / 60) * 360 + 90;
+            hand.style.transform = `rotate(${secondsDegree}deg)`;
+        }
+
+        setInterval(setDate, 1000);
+    </script>
 </body>
 
 </html>

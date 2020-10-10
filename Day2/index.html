@@ -61,6 +61,10 @@
             transform-origin: 100%;
             transform: rotate(90deg);
             transition: all 0.05s;
+            transition-timing-function: ease-in-out;
+        }
+        
+        .second-hand {
             transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
         }
     </style>
@@ -69,6 +73,7 @@
         const hourHand = document.querySelector(".hour-hand");
         const minuteHand = document.querySelector(".min-hand");
         const secondHand = document.querySelector(".second-hand");
+        let first = false;
 
         function setDate() {
             const date = new Date();
@@ -83,6 +88,7 @@
             const hour = date.getHours();
             const hourDegree = ((hour / 12) * 360) + 90;
             hourHand.style.transform = `rotate(${hourDegree}deg)`;
+
         }
 
         setInterval(setDate, 1000);

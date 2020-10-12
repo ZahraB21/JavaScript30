@@ -26,6 +26,18 @@
     <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
     <style>
+         :root {
+            --spacing: 10px;
+            --blur: 1px;
+            --base: #ffc600;
+        }
+        
+        img {
+            padding: var(--spacing);
+            filter: blur(var(--blur));
+            background: var(--base);
+        }
+        
         body {
             text-align: center;
             background: #193549;
@@ -41,6 +53,10 @@
         
         input {
             width: 100px;
+        }
+        
+        .h1 {
+            color: var(--base);
         }
     </style>
 </body>

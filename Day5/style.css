@@ -46,10 +46,10 @@ body {
     margin: 0;
     width: 100%;
     display: flex;
-    flex: 1;
+    flex: 1 0 auto;
     align-items: center;
     justify-content: center;
-    transition: transform 0.5;
+    transition: transform 0.5s;
 }
 
 .panel p {
@@ -63,20 +63,25 @@ body {
     font-size: 4rem;
 }
 
-.open-active {
-    flex: 5;
-}
-
-.panel.open-active:first-child {
+.panel>*:first-child {
     transform: translateY(-100%);
 }
 
-.open-active:last-child {
+.panel>*:last-child {
     transform: translateY(100%);
 }
 
 .panel.open {
+    flex: 5;
     font-size: 40px;
+}
+
+.panel.open-active>*:first-child {
+    transform: translateY(0);
+}
+
+.panel.open-active>*:last-child {
+    transform: translateY(0);
 }
 
 .panel1 {
@@ -97,4 +102,10 @@ body {
 
 .panel5 {
     background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
+
+@media only screen and (max-width: 600px) {
+    .panel p {
+        font-size: 1em;
+    }
 }

@@ -130,12 +130,28 @@
 
         // 7. sort Exercise
         // Sort the people alphabetically by last name
+        const peopleList = people.filter(person => person.split(', '))
+            .sort((a, b) => {
+                a > b ? 1 : -1
+            });
+
+        console.log(peopleList);
 
         // 8. Reduce Exercise
         // Sum up the instances of each of these
         const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car',
             'truck'
         ];
+
+        const sum = data.reduce((obj, item) => {
+            if (!obj[item]) {
+                obj[item] = 0;
+            }
+            obj[item]++;
+            return obj;
+        }, {})
+
+        console.log(sum);
     </script>
 </body>
 

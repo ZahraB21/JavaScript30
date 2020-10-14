@@ -45,12 +45,38 @@ body {
 .panel>* {
     margin: 0;
     width: 100%;
-    border: 1px solid red;
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
     transition: transform 0.5;
+}
+
+.panel p {
+    text-transform: uppercase;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 2rem;
+}
+
+.panel p:nth-child(2) {
+    font-size: 4rem;
+}
+
+.open-active {
+    flex: 5;
+}
+
+.panel.open-active:first-child {
+    transform: translateY(-100%);
+}
+
+.open-active:last-child {
+    transform: translateY(100%);
+}
+
+.panel.open {
+    font-size: 40px;
 }
 
 .panel1 {

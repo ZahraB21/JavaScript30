@@ -27,7 +27,22 @@
             .then(blob => blob.json())
             .then(data => cities.push(...data));
 
-        console.log(cities);
+        console.log(cities.join(''));
+        const search = document.querySelector('.search');
+
+        function findMatches(wordToMatch, cities) {
+            const regex = new RegExp(wordToMatch, 'gi');
+            const result = cities.filter(place => {
+                return place.city.match(regex) || place.state.match(regex);
+            });
+            return result;
+        }
+
+        function displayMatches() {
+            const matchArray = findMatches(this.value, citites);
+        }
+
+        search.addEventListener('change', displayMatches);
     </script>
 </body>
 

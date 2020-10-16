@@ -71,8 +71,16 @@
         );
 
         // Method 1 to delete with index
-        comments.splice(commentIndex, 1);
-        console.table(comments);
+        // comments.splice(commentIndex, 1);
+        // console.table(comments);
+
+        // Method 2 to delete with
+        const newComments = [
+            ...comments.slice(0, commentIndex),
+            ...comments.slice(commentIndex + 1),
+        ];
+
+        console.table(newComments);
     </script>
 </body>
 

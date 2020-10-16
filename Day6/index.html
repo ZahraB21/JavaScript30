@@ -27,8 +27,8 @@
             .then(blob => blob.json())
             .then(data => cities.push(...data));
 
-        console.log(cities.join(''));
         const search = document.querySelector('.search');
+        const suggestions = document.querySelector('.suggestions');
 
         function findMatches(wordToMatch, cities) {
             const regex = new RegExp(wordToMatch, 'gi');
@@ -39,10 +39,17 @@
         }
 
         function displayMatches() {
-            const matchArray = findMatches(this.value, citites);
+            const matchArray = findMatches(this.value, cities);
+            const html = matchArray.map(place => `
+            <li>
+                <span class = "name">${place.city}, ${place.state}</span>    
+                <span class = "population">${place.population}</span>
+            </li>`).join('');
+            suggestions.innerHTML = html;
         }
 
         search.addEventListener('change', displayMatches);
+        search.addEventListener('keyup', displayMatches);
     </script>
 </body>
 

@@ -10,7 +10,16 @@
 <body>
     <canvas width="800" height="800" id="canvas"></canvas>
     <styel> html, body{ margin: 0; padding: 0; } </styel>
-    <script></script>
+    <script>
+        const canvas = document.querySelector("#canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.width = window.innerWidth;
+        ctx.height = window.innerHeight;
+        ctx.strokeStyle = "#BADASS";
+        ctx.lineWidth = 100;
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+    </script>
 </body>
 
 </html>

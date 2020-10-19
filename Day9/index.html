@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
     <script>
         const dogs = [{
             name: "Snickers",
@@ -34,6 +35,20 @@
             "%c I am some great text",
             "font-size: 50px; background: red; text-shadow: 10px 10px 0 blue;"
         );
+
+        // warning!
+        console.warn("OH NOOOO!");
+
+        // Error :|
+        console.error("Shit!");
+
+        // Info
+        console.info("Crocodiles eat 3-4 people per year");
+
+        // Testing
+        const p = document.querySelector("p");
+
+        console.assert(p.classList.contains("ouch"), "That is wrong");
     </script>
 </body>
 

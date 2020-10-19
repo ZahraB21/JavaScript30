@@ -89,6 +89,34 @@
             border-left: 1px solid #d1e2ff;
         }
     </style>
+    <script>
+        const checkboxes = document.querySelectorAll("input");
+
+        let lastCheck;
+
+        let inBetween = false;
+
+        function handleCheck(e) {
+            // if the shift key is pressed,
+            // and the checkbox is selected
+            if (this.checked && e.shiftKey) {
+                checkboxes.forEach((checkbox) => {
+                    if (checkbox === this || checkbox === lastCheck) {
+                        inBetween = !inBetween;
+                    }
+                    if (inBetween) {
+                        checkbox.checked = true;
+                    }
+                });
+            }
+
+            lastCheck = this;
+        }
+
+        checkboxes.forEach((checkbox) =>
+            checkbox.addEventListener("click", handleCheck)
+        );
+    </script>
 </body>
 
 </html>

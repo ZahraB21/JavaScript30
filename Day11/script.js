@@ -51,5 +51,8 @@ skipButtons.forEach((button) => button.addEventListener("click", updateVideo));
 ranges.forEach((range) => range.addEventListener("change", updateRange));
 ranges.forEach((range) => range.addEventListener("mousemove", updateRange));
 
+let mouseDown = false;
 progress.addEventListener("click", scrub);
-// progress.addEventListener("mousemove", scrub);
+progress.addEventListener("mousemove", (e) => mouseDown && scrub(e));
+progress.addEventListener("mousedown", () => (mouseDown = true));
+progress.addEventListener("mouseup", () => (mouseDown = false));

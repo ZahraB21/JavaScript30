@@ -40,6 +40,56 @@
             justify-content: center;
             background: linear-gradient( 135deg, #73138f, 0%, #921099, 48%, #7e4ae8 100%);
         }
+        
+        .player {
+            max-width: 750px;
+            border: 5px solid rgba(0, 0, 0, 0.2);
+            position: relative;
+            font-size: 0;
+            overflow: hidden;
+        }
+        /* This css is only applied when fullscreen is active. */
+        
+        .player:fullscreen {
+            max-width: none;
+            width: 100%;
+        }
+        
+        .player:-webkit-full-screen {
+            max-width: none;
+            width: 100%;
+        }
+        
+        .video {
+            margin-bottom: 0;
+            width: 100%;
+        }
+        
+        .player_controls {
+            position: relative;
+            top: -5px;
+            background: #000;
+            margin-top: 0;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .player_button {
+            background: none;
+            border: 0;
+            line-height: 1;
+            text-align: center;
+            outline: 0;
+            padding: 0;
+            cursor: pointer;
+            max-width: 50px;
+            color: #fff;
+        }
+        
+        .player_buton:focus {
+            border-color: #ffc600;
+        }
     </style>
 </body>
 

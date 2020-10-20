@@ -7,6 +7,40 @@
     <title>Custom HTML5 Video Player</title>
 </head>
 
-<body></body>
+<body>
+    <div class="player">
+        <div class="video">
+            <video class="player_video" src="652333414.mp4"></video>
+        </div>
+        <div class="player_controls">
+            <div class="progress">
+                <div class="progress_filled"></div>
+            </div>
+            <button class="player_button toggle" title="Toggle Play">►</button>
+            <input type="range" class="player_slider" name="volumne" step="0.5" min="0" max="10" value="1" />
+            <input type="range" class="player_slider" name="playbackRate" step="0.1" min="0.5" max="2" value="1" />
+            <button class="player_button" data-skip="-10"><< 10s</button>
+            <button class="player_button" data-skip="25">25s >></button>
+        </div>
+    </div>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            background: #7a419b;
+            min-height: 100vh;
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient( 135deg, #73138f, 0%, #921099, 48%, #7e4ae8 100%);
+        }
+    </style>
+</body>
 
 </html>

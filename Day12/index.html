@@ -5,8 +5,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Key Sequence Detection</title>
+    <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
 </head>
 
-<body></body>
+<body>
+    <script>
+        const secretKey = "wesbos";
+
+        const pressed = [];
+
+        window.addEventListener("keyup", (e) => {
+            console.log(e.key);
+
+            pressed.push(e.key);
+
+            pressed.splice(-secretKey.length - 1,
+                pressed.length - secretKey.length
+            );
+
+            console.log(pressed);
+
+            if (pressed.join("").includes(secretKey)) {
+                console.log("Yaaaay!");
+                cornify_add();
+            }
+        });
+    </script>
+</body>
 
 </html>

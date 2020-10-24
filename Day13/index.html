@@ -250,7 +250,7 @@
           console.log(`Window ScrollY: ${window.scrollY}`);
           console.log(`Slider height: ${sliderImage.height}`);
           const slideInAt =
-            window.scrollY + window.innerHeight - sliderImage.height / 2;
+           ( window.scrollY + window.innerHeight ) - sliderImage.height / 2;
           console.log(slideInAt);
           const imageBottom = sliderImage.height + sliderImage.offsetTop;
           const isHalfShown = slideInAt > sliderImage.offsetTop;

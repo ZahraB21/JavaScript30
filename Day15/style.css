@@ -32,6 +32,12 @@ svg {
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h2 {
+    text-align: center;
+    margin: 0;
+    font-weight: 200;
+}
+
 .plates {
     margin: 0;
     padding: 0;
@@ -44,4 +50,36 @@ svg {
     padding: 10px 0;
     font-weight: 100;
     display: flex;
+}
+
+.plates label {
+    flex: 1;
+    cursor: pointer;
+}
+
+.plates input {
+    display: none;
+}
+
+.plates input:checked+label:before {
+    content: "🌮";
+}
+
+.plates input+label:before {
+    content: "⬜️";
+    margin-right: 10px;
+}
+
+.add-items {
+    margin-top: 10px;
+}
+
+.add-items input {
+    padding: 10px;
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.add-items input[type='submit'] {
+    background: #b8b8b8;
 }

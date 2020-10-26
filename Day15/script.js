@@ -10,16 +10,20 @@ function addItem(e){
         text,
         done: false
     }
+
     items.push(item);
-    itemsList.innerHTML = items.map( (item, index) => {
+    populateItems(items, itemsList);
+    this.reset(); // resetting the input by resetting the form
+}
+
+function populateItems(plates = [], platesList) {
+    platesList.innerHTML = plates.map( (item, index) => {
         return `
             <li>
                 <input type = "checkbox" data-index = ${item.index} id = ${item.text}>
                 <label for = ${item.text}>${item.text}</label>
             </li>
         `}).join('');
-
-    this.reset(); // resetting the input by resetting the form
 }
 
 addItems.addEventListener('submit', addItem);

@@ -21,12 +21,26 @@ function populateItems(plates = [], platesList) {
     platesList.innerHTML = plates.map( (item, index) => {
         return `
             <li>
-                <input type = "checkbox" data-index = ${item.index} id = ${item.text}>
+                <input type = "checkbox" data-index = ${index} id = ${item.text} ${item.done ? 'checked': ''}>
                 <label for = ${item.text}>${item.text}</label>
             </li>
         `}).join('');
 }
 
+function toggleDone(e){
+    if (!e.target.matches('input')) return; // if its not an input
+    const el = e.target;
+    const index = el.dataset.index;
+    console.log(index);
+    items[index].done = !items[index].done;
+    localStorage.setItem('items', JSON.stringify(items));
+    populateItems(items, itemsList);
+}
+
 addItems.addEventListener('submit', addItem);
+itemsList.addEventListener('click', toggleDone);
 
 populateItems(items, itemsList);
+
+
+

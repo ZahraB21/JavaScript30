@@ -1,7 +1,7 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
 
-const items = [];
+const items = JSON.parse(localStorage.getItem('items')) || [];
 
 function addItem(e){
     e.preventDefault();
@@ -13,6 +13,7 @@ function addItem(e){
 
     items.push(item);
     populateItems(items, itemsList);
+    localStorage.setItem('items',JSON.stringify(items));
     this.reset(); // resetting the input by resetting the form
 }
 
@@ -27,3 +28,5 @@ function populateItems(plates = [], platesList) {
 }
 
 addItems.addEventListener('submit', addItem);
+
+populateItems(items, itemsList);

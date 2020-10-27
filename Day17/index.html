@@ -69,7 +69,13 @@
 
       const list = document.querySelector(".bands");
 
-      list.innerHTML = bands.map((band) => `<li>${band}</li>`).join("");
+      function strip(bandName) {
+        return bandName.replace(/^(a |the |an )/i, "").trim();
+      }
+
+      const sortedList = bands.sort((a, b) => (strip(a) > strip(b) ? 1 : -1));
+
+      list.innerHTML = sortedList.map((band) => `<li>${band}</li>`).join("");
     </script>
   </body>
 </html>

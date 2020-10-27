@@ -5,5 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sorting Brand Names without Articles</title>
   </head>
-  <body></body>
+  <body>
+    <ul class="bands"></ul>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 0;
+        background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+        background-size: cover;
+        font-family: sans-serif;
+        font-weight: 200;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .bands {
+        background: #fff;
+        list-style: inside square;
+        font-size: 20px;
+        width: 500px;
+        margin: auto;
+        padding: 0;
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .bands li {
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .bands li:last-child {
+        border-bottom: 0;
+      }
+    </style>
+
+    <script>
+      const bands = [
+        "The Plot in You",
+        "The Devil Wears Prada",
+        "Pierce the Veil",
+        "Norma Jean",
+        "The Bled",
+        "Say Anything",
+        "The Midway State",
+        "We Came as Romans",
+        "Counterparts",
+        "Oh, Sleeper",
+        "A Skylit Drive",
+        "Anywhere But Here",
+        "An Old Dog",
+      ];
+
+      const list = document.querySelector(".bands");
+
+      list.innerHTML = bands.map((band) => `<li>${band}</li>`).join("");
+    </script>
+  </body>
 </html>

@@ -67,5 +67,20 @@
       <li data-time="1:56">Video 57</li>
       <li data-time="4:04">Video 58</li>
     </ul>
+    <script>
+      const times = Array.from(document.querySelectorAll("[data-time]")); // anything that has a data-time
+
+      let seconds = times.reduce((total, current) => {
+        const [mins, secs] = current.dataset.time.split(":");
+        return total + (+mins * 60 + +secs);
+      }, 0);
+
+      const hours = Math.floor(seconds / 3600);
+      let secondsLeft = seconds % 3600;
+
+      const mins = Math.floor(secondsLeft / 60);
+      secondsLeft = secondsLeft % 60;
+      console.log(hours, mins, secondsLeft);
+    </script>
   </body>
 </html>

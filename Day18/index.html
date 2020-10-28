@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Tally String times with Reduce</h1>
+    <div id="result"></div>
     <ul class="videos">
       <li data-time="5:43">Video 1</li>
       <li data-time="2:33">Video 2</li>
@@ -81,6 +82,9 @@
       const mins = Math.floor(secondsLeft / 60);
       secondsLeft = secondsLeft % 60;
       console.log(hours, mins, secondsLeft);
+
+      const result = document.querySelector("#result");
+      result.textContent = `Total => Hours: ${hours}, Minutes: ${mins}, Seconds: ${secondsLeft}`;
     </script>
   </body>
 </html>

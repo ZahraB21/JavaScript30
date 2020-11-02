@@ -5,5 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Native Speech Recognition</title>
   </head>
-  <body></body>
+  <body>
+    <div class="words"></div>
+
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #ffc006;
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue";
+        font-size: 20px;
+      }
+
+      .words {
+        display: flex;
+        background-color: white;
+        max-width: 600px;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+        box-shadow: 3px 5px 0 3px rgba(0, 0, 0, 0.05);
+        border-radius: 0.3rem;
+      }
+
+      .words p {
+        text-align: center;
+        margin-left: 10px;
+        border-left: 1px double rgba(1, 0, 0, 0.2);
+      }
+    </style>
+    <script>
+      window.SpeachRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      const regocnition = new SpeachRecognition();
+
+      let p = document.createElement("p");
+      const words = document.querySelector(".words");
+
+      words.appendChild(p);
+
+      window.addEventListener("result", (e) => console.log(e));
+
+      regocnition.start();
+    </script>
+  </body>
 </html>

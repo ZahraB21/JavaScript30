@@ -22,15 +22,12 @@
       }
 
       .words {
-        display: flex;
-        background-color: white;
         max-width: 500px;
-        justify-content: center;
-        align-items: center;
         margin: 50px auto;
-        box-shadow: 3px 5px 0 3px rgba(0, 0, 0, 0.05);
-        border-radius: 0.3rem;
-        line-height: 3rem;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 1rem 2rem 1rem 3rem;
         background: -webkit-gradient(
             linear,
             0 0,
@@ -41,10 +38,11 @@
           0 4px;
         background-size: 100% 3rem;
         position: relative;
+        line-height: 3rem;
       }
 
-      .words p {
-        margin: 0 0 3rem;
+      p {
+        margin: 0 0 3rem 3rem;
       }
 
       .words:before {
@@ -69,8 +67,22 @@
 
       words.appendChild(p);
 
-      recognition.addEventListener("result", (e) => console.log(e));
+      recognition.addEventListener("result", (e) => {
+        const transcript = Array.from(e.results)
+          .map((result) => result[0])
+          .map((result) => result.transcript)
+          .join("");
 
+        p.textContent = transcript;
+
+        console.log(e.results[0].isFinal);
+        if (e.results[0].isFinal) {
+          p = document.createElement("p");
+          words.appendChild(p);
+        }
+      });
+
+      recognition.addEventListener("end", recognition.start);
       recognition.start();
     </script>
   </body>

@@ -59,19 +59,19 @@
       }
     </style>
     <script>
-      window.SpeachRecognition =
+      window.SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
 
-      const regocnition = new SpeachRecognition();
+      const recognition = new SpeechRecognition();
 
       let p = document.createElement("p");
       const words = document.querySelector(".words");
 
       words.appendChild(p);
 
-      window.addEventListener("result", (e) => console.log(e));
+      recognition.addEventListener("result", (e) => console.log(e));
 
-      regocnition.start();
+      recognition.start();
     </script>
   </body>
 </html>

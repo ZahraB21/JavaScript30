@@ -8,41 +8,41 @@
   <body>
     <nav>
       <ul class="menu">
-        <li>Home</li>
-        <li>Order Status</li>
-        <li>Tweets</li>
-        <li>Read Our History</li>
-        <li>Contact Us</li>
+        <li><a href="">Home</a></li>
+        <li><a href=""></a>Order Status</a></li>
+        <li><a href=""></a>Tweets</a></li>
+        <li><a href=""></a>Read Our History</a></li>
+        <li><a href=""></a>Contact Us</a></li>
       </ul>
     </nav>
-    <div>
+    <div class="wrapper">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quas,
-        deserunt magni dolor inventore aut nesciunt laborum officia odit, ipsum
-        vitae earum eveniet unde doloribus atque ipsa amet cum vel?
+        Lorem ipsum dolor sit amet <a href="">consectetur</a> adipisicing elit. Corrupti quas,
+        <a href="">deserunt</a> magni dolor inventore aut nesciunt laborum officia odit, ipsum
+        vitae earum eveniet unde <a href="">doloribus</a> atque ipsa amet cum vel?
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati,
+        Lorem ipsum dolor sit amet <a href="">consectetur</a>, adipisicing elit. <a href="">Obcaecati</a>,
         ratione aut. Recusandae, deserunt! Odit, vel tempora? Quae, est.
-        Perspiciatis est aliquam recusandae enim et! Quasi dolorum recusandae
+        Perspiciatis est aliquam <a href="">recusandae</a> enim et! Quasi dolorum recusandae
         corporis aut esse!
       </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
+        Lorem ipsum dolor sit amet, <a href="">consectetur</a> adipisicing elit. Exercitationem
         repellat mollitia dicta, amet ullam, neque numquam corporis architecto
-        nam vitae at! Saepe recusandae, ratione repudiandae itaque nostrum neque
+        nam vitae at! Saepe recusandae, ratione <a href="">repudiandae</a> itaque nostrum neque
         quos ex.
       </p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-        sequi ullam fugit nemo laboriosam magni molestiae dignissimos tempora
-        at. Voluptatum, quidem accusantium? Fuga dicta rerum vero voluptatum ex,
+        sequi ullam fugit nemo laboriosam magni molestiae <a href="">dignissimos</a> tempora
+        at. Voluptatum, quidem accusantium? Fuga dicta rerum vero <a href="">voluptatum</a> ex,
         maxime totam.
       </p>
       <p>
-        Commodi vero consequuntur enim quisquam officiis animi quibusdam
+        Commodi vero consequuntur enim <a href="">quisquam</a> officiis animi quibusdam
         exercitationem impedit voluptatem cupiditate adipisci veniam laboriosam
-        eaque neque tenetur quod, nemo porro quae pariatur quas. Eius aliquam
+        eaque neque tenetur quod, nemo porro quae <a href="">pariatur</a> quas. Eius aliquam
         repellat veritatis tempore fuga?
       </p>
     </div>
@@ -90,9 +90,24 @@
         padding: 5px 10px;
       }
 
-      li:hover {
+      .wrapper {
+        position: relative;
+      }
+
+      a{
+          text-decoration: none;
+          color: black;
+      }
+
+      .highlight {
         background: white;
         border-radius: 1rem;
+        transition: all 0.2s;
+        position: abosolute;
+        top: 0;
+        left: 0;
+        display: block;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       }
 
       p {

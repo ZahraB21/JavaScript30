@@ -6,7 +6,7 @@
     <title>Native Speech Recognition</title>
   </head>
   <body>
-    <div class="words"></div>
+    <div class="words" contenteditable></div>
 
     <style>
       html {
@@ -24,18 +24,38 @@
       .words {
         display: flex;
         background-color: white;
-        max-width: 600px;
+        max-width: 500px;
         justify-content: center;
         align-items: center;
         margin: 50px auto;
         box-shadow: 3px 5px 0 3px rgba(0, 0, 0, 0.05);
         border-radius: 0.3rem;
+        line-height: 3rem;
+        background: -webkit-gradient(
+            linear,
+            0 0,
+            0 100%,
+            from(#d9eaf3),
+            color-stop(4%, #fff)
+          )
+          0 4px;
+        background-size: 100% 3rem;
+        position: relative;
       }
 
       .words p {
-        text-align: center;
-        margin-left: 10px;
-        border-left: 1px double rgba(1, 0, 0, 0.2);
+        margin: 0 0 3rem;
+      }
+
+      .words:before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        top: 0;
+        left: 30px;
+        bottom: 0;
+        border: 1px solid;
+        border-color: transparent#efe4e4;
       }
     </style>
     <script>

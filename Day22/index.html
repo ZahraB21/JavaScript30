@@ -54,7 +54,15 @@
         box-sizing: border-box;
       }
 
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
       body {
+        min-height: 100vh;
+        margin: 0; /* Important! */
+        font-family: sans-serif;
         background: linear-gradient(
             45deg,
             hsla(340, 100%, 55%, 1) 0%,
@@ -75,8 +83,6 @@
             hsla(35, 95%, 55%, 1) 100%,
             hsla(35, 95%, 55%, 0) 70%
           );
-        width: 60%;
-        margin: 3rem auto;
         font-weight: 200;
         font-size: 18px;
         font-family: "Helvetica Neue";
@@ -84,22 +90,31 @@
 
       .menu {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         list-style-type: none;
+        margin-top: 3rem;
         margin-bottom: 3rem;
       }
 
-      li {
+      .menu a {
+        display: inline-block;
         padding: 5px 10px;
+        margin: 0 20px;
+        color: black;
       }
 
       .wrapper {
+        margin: 0 auto;
+        max-width: 800px;
         position: relative;
       }
 
       a {
         text-decoration: none;
         color: black;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        padding: 0 5px;
       }
 
       a:hover {
@@ -109,9 +124,12 @@
       .highlight {
         background: white;
         border-radius: 1rem;
+        padding: 2px;
         transition: all 0.2s;
-        position: abosolute;
+        position: absolute;
+        border-bottom: 2px solid white;
         top: 0;
+        z-index: -1;
         left: 0;
         display: block;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -131,7 +149,7 @@
       highlight.classList.add("highlight");
       document.body.append(highlight);
 
-      function highlight() {
+      function highlightLink() {
         const linkCoords = this.getBoundingClientRect(); // gets the selected elements rectangle details
         console.log(linkCoords);
         const coords = {
@@ -146,7 +164,7 @@
         highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
       }
 
-      triggers.forEach((a) => a.addEventListener("mouseenter", highlight));
+      triggers.forEach((a) => a.addEventListener("mouseenter", highlightLink));
     </script>
   </body>
 </html>

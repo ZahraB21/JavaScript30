@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Follow Long Links</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
     <nav>
@@ -49,99 +50,6 @@
         fuga?
       </p>
     </div>
-    <style>
-      html {
-        box-sizing: border-box;
-      }
-
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
-      body {
-        min-height: 100vh;
-        margin: 0; /* Important! */
-        font-family: sans-serif;
-        background: linear-gradient(
-            45deg,
-            hsla(340, 100%, 55%, 1) 0%,
-            hsla(340, 100%, 55%, 0) 70%
-          ),
-          linear-gradient(
-            135deg,
-            hsla(225, 95%, 50%, 1) 10%,
-            hsla(225, 95%, 50%, 0) 80%
-          ),
-          linear-gradient(
-            225deg,
-            hsla(140, 90%, 50%, 1) 10%,
-            hsla(140, 90%, 50%, 0) 80%
-          ),
-          linear-gradient(
-            315deg,
-            hsla(35, 95%, 55%, 1) 100%,
-            hsla(35, 95%, 55%, 0) 70%
-          );
-        font-weight: 200;
-        font-size: 18px;
-        font-family: "Helvetica Neue";
-      }
-
-      .menu {
-        display: flex;
-        justify-content: center;
-        list-style-type: none;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-      }
-
-      .menu a {
-        display: inline-block;
-        padding: 5px 10px;
-        margin: 0 20px;
-        color: black;
-      }
-
-      .wrapper {
-        margin: 0 auto;
-        max-width: 800px;
-        position: relative;
-      }
-
-      a {
-        text-decoration: none;
-        color: black;
-        background: rgba(0, 0, 0, 0.05);
-        border-radius: 20px;
-        padding: 0 5px;
-      }
-
-      a:hover {
-        cursor: pointer;
-      }
-
-      .highlight {
-        background: white;
-        border-radius: 1rem;
-        padding: 2px;
-        transition: all 0.2s;
-        position: absolute;
-        border-bottom: 2px solid white;
-        top: 0;
-        z-index: -1;
-        left: 0;
-        display: block;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-
-      p {
-        width: 60%;
-        text-align: left;
-        margin: 10px auto;
-        line-height: 2rem;
-      }
-    </style>
     <script>
       const triggers = document.querySelectorAll("a");
       const highlight = document.createElement("span");

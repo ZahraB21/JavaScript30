@@ -5,5 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Speech Synthesis</title>
   </head>
-  <body></body>
+  <body>
+    <div>
+      <h1>The Voiceinator 5000</h1>
+      <select name="voice" id="voice"></select>
+      <label for="rate">Rate</label>
+      <input type="range" min="0" max="3" value="" step="0.1" name="rate" />
+      <label for="pitch">Pitch</label>
+      <input type="range" min="0" max="3" value="" step="0.1" name="pitch" />
+      <text-area id="text"> Hello, I love JS! </text-area>
+      <button id="speak">Speak</button>
+      <button id="stop">Stop</button>
+    </div>
+  </body>
 </html>

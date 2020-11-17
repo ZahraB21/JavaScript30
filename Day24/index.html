@@ -42,23 +42,6 @@
         <p>Expedita cupiditate maiores ad temporibus asperiores repudiandae? Neque amet magni iure suscipit esse, dolore sed accusantium quaerat voluptate nulla aut ipsum hic quibusdam illum officia quisquam veritatis accusamus quas debitis!</p>
         <p>Expedita cupiditate maiores ad temporibus asperiores repudiandae? Neque amet magni iure suscipit esse, dolore sed accusantium quaerat voluptate nulla aut ipsum hic quibusdam illum officia quisquam veritatis accusamus quas debitis!</p>
     </div>
-    <script>
-        const nav = document.querySelector('#main');
-        let topOfNav = nav.offsetTop;
-        
-        function fixNav(){
-            console.log(topOfNav, window.scrollY);
-            if ( window.scrollY >= topOfNav ){
-                document.body.classList.add('fixed-nav');
-                document.body.style.paddingTop = nav.offsetHeight + 'px';
-                console.log(window.scrollY);
-            } else {
-                document.body.classList.remove('fixed-nav');
-                document.body.style.paddingTop = 0;
-            }
-        }
-
-        window.addEventListener('scroll', fixNav);
-    </script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

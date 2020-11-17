@@ -17,6 +17,8 @@
 
         function logText(e){
             console.log(this.classList.value);
+            // stops bubbling up/down
+            e.stopPropagation();
         }
 
         // Adding click listener to body

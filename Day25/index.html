@@ -6,6 +6,37 @@
     <title>Event Capture, Bubbling, Propagation and Once</title>
 </head>
 <body>
-    
+    <div class="one">
+        <div class="two">
+            <div class="three"></div>
+        </div>
+    </div>
+
+    <style>
+        html{
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        div {
+            width: 100%;
+            padding: 100px;
+        }
+
+        .one {
+            background: thistle;
+        }
+
+        .two{
+            background: mistyrose;
+        }
+
+        .three {
+            background: coral;
+        }
+    </style>
 </body>
 </html>

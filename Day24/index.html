@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sticky Nav</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -41,98 +42,23 @@
         <p>Expedita cupiditate maiores ad temporibus asperiores repudiandae? Neque amet magni iure suscipit esse, dolore sed accusantium quaerat voluptate nulla aut ipsum hic quibusdam illum officia quisquam veritatis accusamus quas debitis!</p>
         <p>Expedita cupiditate maiores ad temporibus asperiores repudiandae? Neque amet magni iure suscipit esse, dolore sed accusantium quaerat voluptate nulla aut ipsum hic quibusdam illum officia quisquam veritatis accusamus quas debitis!</p>
     </div>
-    
-    <style>
-        html{
-            box-sizing: border-box;
-            font-family: 'helvetica neue';
-            font-size: 20px;
-            font-weight: 200;
+    <script>
+        const nav = document.querySelector('#main');
+        let topOfNav = nav.offsetTop;
+        
+        function fixNav(){
+            console.log(topOfNav, window.scrollY);
+            if ( window.scrollY >= topOfNav ){
+                document.body.classList.add('fixed-nav');
+                document.body.style.paddingTop = nav.offsetHeight + 'px';
+                console.log(window.scrollY);
+            } else {
+                document.body.classList.remove('fixed-nav');
+                document.body.style.paddingTop = 0;
+            }
         }
 
-        *, *:before, *:after {
-            box-sizing: inherit;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: #ccc;
-        }
-
-        header{
-            background: url(https://source.unsplash.com/GKN6rpDr0EI/960x640) bottom center no-repeat;
-            background-size: cover;
-            height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        h1{
-            color: white;
-            font-size: 7vw;
-            text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
-        }
-
-        nav {
-            background: #000;
-            width: 100%;
-            transition: all 0.5s;
-            position: relative;
-            z-index: 1;
-            top: 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            padding: 0;
-            margin: 0;            
-        }
-
-        nav li {
-            flex: 1;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            display: flex;            
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            display: inline-block;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            padding: 1.2rem;
-        }
-
-        li.logo{
-            max-width: 0;
-            overflow: hidden;
-            background: #fff;
-            font-weight: 600;
-            font-size: 30px;
-            transition: all 0.5s;
-        }
-
-        li.logo a {
-            color: #000;
-        }
-
-        .site-wrap{
-            width: 80%;
-            margin: 2rem auto;
-            padding: 2rem;
-            box-shadow: 1px -3px 2px rgba(0,0,0,0.7);
-            background: #fff;
-            text-align: justify;
-            transform: scale(0.98);
-            transition: all 0.5s;
-        }
-
-    </style>
+        window.addEventListener('scroll', fixNav);
+    </script>
 </body>
 </html>

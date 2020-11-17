@@ -22,8 +22,13 @@
         // Adding click listener to body
         document.body.addEventListener('click', logText);
         
-        // by default click on child element bubbles top
-        divs.forEach( div => div.addEventListener( 'click', logText )); 
+        // by default click on child element bubbles top (by default capture: false)
+        // divs.forEach( div => div.addEventListener( 'click', logText )); 
+
+        // bubbling down from parent to child (by setting capture: true)
+        divs.forEach( div => div.addEventListener( 'click', logText , {
+            capture: true
+        })); 
 
     </script>
     <style>

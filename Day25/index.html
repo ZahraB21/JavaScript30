@@ -5,13 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Capture, Bubbling, Propagation and Once</title>
 </head>
-<body>
+<body class = "bod">
     <div class="one">
         <div class="two">
             <div class="three"></div>
         </div>
     </div>
 
+    <script>
+        const divs = document.querySelectorAll('div');
+
+        function logText(e){
+            console.log(this.classList.value);
+        }
+
+        // Adding click listener to body
+        document.body.addEventListener('click', logText);
+        
+        // by default click on child element bubbles top
+        divs.forEach( div => div.addEventListener( 'click', logText )); 
+
+    </script>
     <style>
         html{
             box-sizing: border-box;

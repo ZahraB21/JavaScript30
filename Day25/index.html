@@ -11,9 +11,11 @@
             <div class="three"></div>
         </div>
     </div>
+    <button class = "button">Click Once</button>
 
     <script>
         const divs = document.querySelectorAll('div');
+        const button = document.querySelector('button');
 
         function logText(e){
             console.log(this.classList.value);
@@ -22,15 +24,21 @@
         }
 
         // Adding click listener to body
-        document.body.addEventListener('click', logText);
+        // document.body.addEventListener('click', logText);
         
         // by default click on child element bubbles top (by default capture: false)
         // divs.forEach( div => div.addEventListener( 'click', logText )); 
 
         // bubbling down from parent to child (by setting capture: true)
         divs.forEach( div => div.addEventListener( 'click', logText , {
-            capture: true
+            capture: true,
+            once: true // apply event listener only once
         })); 
+
+        // apply event listener only once - useful for checkout buttons
+        button.addEventListener('click', () => console.log('Button Clicked !!!'), {
+            once: true
+        });
 
     </script>
     <style>

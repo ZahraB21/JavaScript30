@@ -1,0 +1,47 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Helvetica Neue";
+    font-size: 1em;
+    background: linear-gradient(to top left, #1247a5, #3693f1);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.timer {
+    width: 100%;
+}
+
+.timer_controls {
+    width: 100%;
+    display: flex;
+}
+
+.timer_button, input {
+    padding: 15px 30px;
+    margin: 0;
+    border: 1px solid #113e86;
+    flex: 1;
+}
+
+.timer_button {
+    background: #174a99;
+    border-bottom: 5px solid #113e86;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+input {
+    background: white;
+    color: #174a99;
+    border: 1px solid white;
+    border-bottom: 5px solid white;
+}

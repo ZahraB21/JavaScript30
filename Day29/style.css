@@ -2,7 +2,9 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -24,7 +26,8 @@ body {
     display: flex;
 }
 
-.timer_button, input {
+.timer_button,
+input {
     padding: 15px 30px;
     margin: 0;
     border: 1px solid #113e86;
@@ -36,12 +39,12 @@ body {
     border-bottom: 5px solid #113e86;
     color: white;
     text-transform: uppercase;
-
 }
 
 input {
     background: white;
     color: #174a99;
     border: 1px solid white;
+    height: 100%;
     border-bottom: 5px solid white;
 }

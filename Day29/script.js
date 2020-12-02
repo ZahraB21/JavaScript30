@@ -1,5 +1,6 @@
 const timeLeft = document.querySelector('.display_time-left');
 const endTime = document.querySelector('.display_end-time');
+const buttons = document.querySelectorAll('.timer_button');
 let timerStop;
 
 function timer(seconds){
@@ -15,6 +16,7 @@ function timer(seconds){
             displayTimer(seconds);
         } else {
             clearInterval(timerStop);
+            return;
         }
     }, 1000);
 }
@@ -32,3 +34,14 @@ function displayComeBack(timestamp){
     endTime.textContent = `${hours}:${minutes > 10 ? '' : '0'}${minutes}`;
 }
 
+buttons.forEach(button => button.addEventListener('click', function() {
+    const time = this.dataset.time;
+    timer(time);
+}));
+
+document.customForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const time = (this.minutes.value * 60);
+    timer(time);
+    this.reset();
+})
